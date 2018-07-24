@@ -18,6 +18,8 @@ class roulette:
         rouletteNumber("red","30","three"),rouletteNumber("black","31","one"),rouletteNumber("red","32","two"),rouletteNumber("black","33","three"),
         rouletteNumber("red","34","one"),rouletteNumber("black","35","two"),rouletteNumber("red","36","three")]
 
+
+
 def spin():
     x = random.randint(0,37)
     return x
@@ -27,7 +29,7 @@ def getRepetitions(iterations):
     col1 = "white"
     maximum=1
     count=1
-    for i in range (0,iterations):
+    for i in range (0,int(iterations)):
         num = spin()
         if col1 == roul.array[num].c:
             count = count+1
@@ -38,3 +40,8 @@ def getRepetitions(iterations):
             col1=roul.array[num].c
     return maximum
 
+
+while(1):
+    print("Please input the number of roulette spins for which you want to check maximum color repetitions")
+    number=input()        
+    print("The maximum number of repetitions is: "+str(getRepetitions(number)))
