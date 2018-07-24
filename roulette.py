@@ -22,23 +22,19 @@ def spin():
     x = random.randint(0,37)
     return x
 
-roul = roulette()
+def getRepetitions(iterations):
+    roul = roulette()
+    col1 = "white"
+    maximum=1
+    count=1
+    for i in range (0,iterations):
+        num = spin()
+        if col1 == roul.array[num].c:
+            count = count+1
+            if count>maximum:
+                maximum=count
+        else:
+            count=1
+            col1=roul.array[num].c
+    return maximum
 
-col1 = "white"
-maximum=1
-count=1
-it=100
-
-for i in range (0,it):
-    num = spin()
-    if col1 == roul.array[num].c:
-        count = count+1
-        if count>maximum:
-            maximum=count
-            print("Local MAX="+str(maximum))
-    else:
-        count=1
-        col1=roul.array[num].c
-    
-
-print("Global MAX="+str(maximum))
