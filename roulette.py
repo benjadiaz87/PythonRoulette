@@ -79,3 +79,22 @@ def numberBet(amount):
     else:
         return 0
 
+def evenOdd(amount):
+    print("Press E for Even or O for Odd.")
+    evodd = input()
+    x=spin()
+    roul=roulette()
+    print("NUMBER:  "+roul.array[x].n, "    COLOR:  "+roul.array[x].c)
+    if roul.array[x].n=="0" or roul.array[x].n=="00":
+        return 0
+    if evodd == "E" or evodd == "e":
+        if int(roul.array[x].n)%2==0:
+            return int(amount)*2
+        else:
+            return 0
+    elif color == "O" or color == "o":
+        if int(roul.array[x].n)%2!=0:
+            return int(amount)*2
+        else:
+            return 0
+
