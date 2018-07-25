@@ -24,6 +24,11 @@ def spin():
     x = random.randint(0,37)
     return x
 
+def printRoulette():
+    roul=roulette()
+    for x in range (0,38):
+        print("NUMBER:  "+roul.array[x].n, "    COLOR:  "+roul.array[x].c)
+
 def getRepetitions(iterations):
     roul = roulette()
     col1 = "white"
@@ -40,8 +45,17 @@ def getRepetitions(iterations):
             col1=roul.array[num].c
     return maximum
 
+def spinOnce():
+    roul=roulette()
+    x=spin()
+    print("NUMBER:  "+roul.array[x].n, "    COLOR:  "+roul.array[x].c)
 
 while(1):
-    print("Please input the number of roulette spins for which you want to check maximum color repetitions")
+    print("Please input the number of roulette spins for which you want to check maximum color repetitions. Press 0 to print roulette. Press S to spin once.")
     number=input()        
-    print("The maximum number of repetitions is: "+str(getRepetitions(number)))
+    if str(number) == "P" or str(number)  == "p":
+        printRoulette()
+    elif str(number) == "s" or str(number)  == "S":
+        spinOnce()
+    else:
+        print("The maximum number of repetitions is: "+str(getRepetitions(number)))
