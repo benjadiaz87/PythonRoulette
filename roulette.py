@@ -66,3 +66,16 @@ def colorBet(amount):
             return int(amount)*2
         else:
             return 0
+
+#number bet working but still not implemented in the interface
+def numberBet(amount):
+    print("Input the number for which you want to bet.")
+    number = input()
+    x=spin()
+    roul=roulette()
+    print("NUMBER:  "+roul.array[x].n, "    COLOR:  "+roul.array[x].c)
+    if roul.array[x].n==number:
+        return int(amount)*36
+    else:
+        return 0
+
